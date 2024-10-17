@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>Login With Oauth</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+
+        <!-- Botón para iniciar sesión con Google -->
+        <div class="oauth-buttons">
+            <a href="{{url_for('auth.Login', OauthWith='google')}}" class="btn oauth-google">Iniciar sesión con Google</a>
+        </div>
+
+        <!-- Botón para iniciar sesión con GitHub -->
+        <div class="oauth-buttons">
+            <a href="{{url_for('auth.Login', OauthWith='github')}}" class="btn oauth-github">Iniciar sesión con GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
