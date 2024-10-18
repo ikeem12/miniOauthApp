@@ -11,6 +11,9 @@ def createApp():
     app.secret_key = SECRET_KEY
 
     oauth.init_app(app)
+    login.init_app(app)
+    
+    login.login_view = 'main.index'
 
     google = oauth.register(
         name='google',

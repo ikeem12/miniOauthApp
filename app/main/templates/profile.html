@@ -6,9 +6,13 @@
     <title>Profile</title>
 </head>
 <body>
-    <h1>Hola {{ user.name }}</h1>
-    <img src="{{user.avatar}}">
-    <h3>correoElectronico: {{ user.email}}</h3>
+
+    <h1>Hola {{current_user.name}}</h1>
+    <!-- <h1>Hola {{user.name}}</h1> -->
+    <img src="{{current_user.avatar}}" alt="">
+    <!-- <img src="{{user.avatar}}" alt=""> -->
+    <h3>correo electronico: {{current_user.email}}</h3>
+    <!-- <h3>correo electronico: {{user.email}}</h3> -->
     <a href="{{ url_for('auth.Logout')}}">Logout</a>
 </body>
 </html>
