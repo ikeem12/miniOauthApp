@@ -10,8 +10,4 @@ def index():
 @main.route('/profile')
 @login_required
 def profile():
-    # user = session.get('user')
-    # if user is None:
-    #     return redirect(url_for('main.index'))
     return render_template('profile.html')
-    # return render_template('profile.html', user=user)

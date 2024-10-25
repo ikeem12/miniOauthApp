@@ -6,13 +6,18 @@
     <title>Profile</title>
 </head>
 <body>
-
+    {% with messages = get_flashed_messages(with_categories=True) %}
+  {% if messages %}
+    <ul>
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
     <h1>Hola {{current_user.name}}</h1>
-    <!-- <h1>Hola {{user.name}}</h1> -->
     <img src="{{current_user.avatar}}" alt="">
-    <!-- <img src="{{user.avatar}}" alt=""> -->
     <h3>correo electronico: {{current_user.email}}</h3>
-    <!-- <h3>correo electronico: {{user.email}}</h3> -->
     <a href="{{ url_for('auth.Logout')}}">Logout</a>
 </body>
 </html>
